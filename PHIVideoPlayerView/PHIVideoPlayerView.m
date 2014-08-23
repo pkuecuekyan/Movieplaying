@@ -50,6 +50,7 @@
         }
     }
 }
+
 #pragma mark - Initializers/deallocator
 
 - (instancetype)initWithFrame:(CGRect)frame playerItem:(AVPlayerItem*)aPlayerItem {
@@ -252,21 +253,23 @@
     [self.playPauseButton centerInSuperview];
     
     // currentTime, progress bar, totalTime
-    NSDictionary *hudMetrics = @{@"maxWidth":[NSNumber numberWithFloat:MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)]};
+    NSDictionary *hudMetrics = @{@"maxWidth":[NSNumber numberWithFloat:MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)],
+                                 @"airplayButtonWidth": [NSNumber numberWithFloat:self.airplayButton.frame.size.width]};
     NSDictionary *hudViews = @{@"progressBar": self.progressBar,
                                @"playBackTime": self.playBackTime,
                                @"playBackTotal": self.playBackTotalTime,
                                @"airplayButton": self.airplayButton};
     [self.playerHudBottom addConstraints:[NSLayoutConstraint
-                                          constraintsWithVisualFormat:@"H:|-5-[playBackTime]-[progressBar(<=maxWidth)]-[playBackTotal]-[airplayButton(<=30,>=15)]-5-|"
+                                          constraintsWithVisualFormat:@"H:|-5-[playBackTime]-[progressBar(<=maxWidth)]-[playBackTotal]-[airplayButton(==airplayButtonWidth)]-5-|"
                                           options:0
                                           metrics:hudMetrics
                                           views:hudViews]];
+    [self.playerHudBottom addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[airplayButton(==airplayButtonHeight@750)]" options:0 metrics:@{@"airplayButtonHeight":[NSNumber numberWithFloat:self.airplayButton.frame.size.height]} views:@{@"airplayButton": self.airplayButton}]];
     
+    [self.airplayButton centerVerticallyInSuperview];
     [self.playBackTotalTime centerVerticallyInSuperview];
     [self.playBackTime centerVerticallyInSuperview];
     [self.progressBar centerVerticallyInSuperview];
-    [self.airplayButton centerVerticallyInSuperview];
     
 //    DLog(@"%s: Auto Layout constraints = %@ %@", __func__, self.constraints, self.playerHudBottom.constraints);
     
@@ -393,6 +396,16 @@
     self.isPlaying = NO;
     [self.playPauseButton setSelected:NO];
 }
+
+- (void)endPlayer {
+    
+    [self.moviePlayer pause];
+    self.moviePlayer.rate = 0.0;
+    self.isPlaying = NO;
+    [self.playerLayer removeFromSuperlayer];
+    self.moviePlayer = nil;
+}
+
 
 #pragma mark - ActivityIndicator show/hide
 

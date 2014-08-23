@@ -16,9 +16,9 @@
 		69087A231996F81600699FF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69087A211996F81600699FF0 /* Main.storyboard */; };
 		69087A261996F81600699FF0 /* PHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69087A251996F81600699FF0 /* PHIViewController.m */; };
 		69087A281996F81600699FF0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69087A271996F81600699FF0 /* Images.xcassets */; };
-		69DF9FD719A70FD10003924B /* UIView+ConstraintHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DF9FD219A70FD10003924B /* UIView+ConstraintHelper.m */; };
-		69DF9FD819A70FD10003924B /* PHIVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DF9FD419A70FD10003924B /* PHIVideoPlayerView.m */; };
-		69DF9FD919A70FD10003924B /* PlayerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 69DF9FD619A70FD10003924B /* PlayerView.bundle */; };
+		699ED5B519A9245A000C6395 /* UIView+ConstraintHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 699ED5B019A9245A000C6395 /* UIView+ConstraintHelper.m */; };
+		699ED5B619A9245A000C6395 /* PHIVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 699ED5B219A9245A000C6395 /* PHIVideoPlayerView.m */; };
+		699ED5B719A9245A000C6395 /* PlayerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 699ED5B419A9245A000C6395 /* PlayerView.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +37,11 @@
 		69087A251996F81600699FF0 /* PHIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHIViewController.m; sourceTree = "<group>"; };
 		69087A271996F81600699FF0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		69087A2E1996F81600699FF0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		69DF9FD119A70FD10003924B /* UIView+ConstraintHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ConstraintHelper.h"; sourceTree = "<group>"; };
-		69DF9FD219A70FD10003924B /* UIView+ConstraintHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ConstraintHelper.m"; sourceTree = "<group>"; };
-		69DF9FD319A70FD10003924B /* PHIVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHIVideoPlayerView.h; sourceTree = "<group>"; };
-		69DF9FD419A70FD10003924B /* PHIVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHIVideoPlayerView.m; sourceTree = "<group>"; };
-		69DF9FD619A70FD10003924B /* PlayerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PlayerView.bundle; sourceTree = "<group>"; };
+		699ED5AF19A9245A000C6395 /* UIView+ConstraintHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ConstraintHelper.h"; sourceTree = "<group>"; };
+		699ED5B019A9245A000C6395 /* UIView+ConstraintHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ConstraintHelper.m"; sourceTree = "<group>"; };
+		699ED5B119A9245A000C6395 /* PHIVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHIVideoPlayerView.h; sourceTree = "<group>"; };
+		699ED5B219A9245A000C6395 /* PHIVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHIVideoPlayerView.m; sourceTree = "<group>"; };
+		699ED5B419A9245A000C6395 /* PlayerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PlayerView.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 		69087A151996F81600699FF0 /* Movieplaying */ = {
 			isa = PBXGroup;
 			children = (
-				69DF9FCF19A70FD10003924B /* PHIVideoPlayerView */,
+				699ED5AD19A9245A000C6395 /* PHIVideoPlayerView */,
 				69087A1E1996F81600699FF0 /* PHIAppDelegate.h */,
 				69087A1F1996F81600699FF0 /* PHIAppDelegate.m */,
 				69087A211996F81600699FF0 /* Main.storyboard */,
@@ -112,30 +112,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		69DF9FCF19A70FD10003924B /* PHIVideoPlayerView */ = {
+		699ED5AD19A9245A000C6395 /* PHIVideoPlayerView */ = {
 			isa = PBXGroup;
 			children = (
-				69DF9FD019A70FD10003924B /* helper */,
-				69DF9FD319A70FD10003924B /* PHIVideoPlayerView.h */,
-				69DF9FD419A70FD10003924B /* PHIVideoPlayerView.m */,
-				69DF9FD519A70FD10003924B /* Resources */,
+				699ED5AE19A9245A000C6395 /* helper */,
+				699ED5B119A9245A000C6395 /* PHIVideoPlayerView.h */,
+				699ED5B219A9245A000C6395 /* PHIVideoPlayerView.m */,
+				699ED5B319A9245A000C6395 /* Resources */,
 			);
 			path = PHIVideoPlayerView;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
-		69DF9FD019A70FD10003924B /* helper */ = {
+		699ED5AE19A9245A000C6395 /* helper */ = {
 			isa = PBXGroup;
 			children = (
-				69DF9FD119A70FD10003924B /* UIView+ConstraintHelper.h */,
-				69DF9FD219A70FD10003924B /* UIView+ConstraintHelper.m */,
+				699ED5AF19A9245A000C6395 /* UIView+ConstraintHelper.h */,
+				699ED5B019A9245A000C6395 /* UIView+ConstraintHelper.m */,
 			);
 			path = helper;
 			sourceTree = "<group>";
 		};
-		69DF9FD519A70FD10003924B /* Resources */ = {
+		699ED5B319A9245A000C6395 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				69DF9FD619A70FD10003924B /* PlayerView.bundle */,
+				699ED5B419A9245A000C6395 /* PlayerView.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69087A281996F81600699FF0 /* Images.xcassets in Resources */,
-				69DF9FD919A70FD10003924B /* PlayerView.bundle in Resources */,
+				699ED5B719A9245A000C6395 /* PlayerView.bundle in Resources */,
 				69087A1A1996F81600699FF0 /* InfoPlist.strings in Resources */,
 				69087A231996F81600699FF0 /* Main.storyboard in Resources */,
 			);
@@ -213,8 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				69087A261996F81600699FF0 /* PHIViewController.m in Sources */,
-				69DF9FD719A70FD10003924B /* UIView+ConstraintHelper.m in Sources */,
-				69DF9FD819A70FD10003924B /* PHIVideoPlayerView.m in Sources */,
+				699ED5B519A9245A000C6395 /* UIView+ConstraintHelper.m in Sources */,
+				699ED5B619A9245A000C6395 /* PHIVideoPlayerView.m in Sources */,
 				69087A201996F81600699FF0 /* PHIAppDelegate.m in Sources */,
 				69087A1C1996F81600699FF0 /* main.m in Sources */,
 			);

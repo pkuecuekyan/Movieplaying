@@ -9,7 +9,7 @@ The project can run on iPhones/iPads (iOS 7+) or be executed in the simulator (i
 
 ## Usage
 
-To use in your own projects, just drag the files in the PHIVideoPlayerView folder into your own project and import the header files. Then, allocate an instance like so:
+To use in your own projects, just drag the files in the [PHIVideoPlayerView folder](PHIVideoPlayerView/) into your own project and import the header files. Then, allocate an instance like so:
 
 ```objective-c
 PHIVideoPlayerView *videoPlayer = [[PHIVideoPlayerView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) contentURL:url];
