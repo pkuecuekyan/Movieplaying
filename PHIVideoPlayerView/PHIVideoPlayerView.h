@@ -29,21 +29,22 @@
 @interface PHIVideoPlayerView : UIView
 
 @property (assign, nonatomic) id <playerViewDelegate> delegate;
-@property (retain, nonatomic) NSURL *contentURL;
-@property (retain, nonatomic) AVPlayer *moviePlayer;
+@property (strong, nonatomic) NSURL *contentURL;
+@property (strong, nonatomic) AVPlayer *moviePlayer;
 
 @property (assign, nonatomic) BOOL isPlaying;
 @property (assign, nonatomic) BOOL shouldShowHideParentNavigationBar;
+@property (assign, nonatomic) BOOL shouldPlayAudioOnVibrate;
 
-@property (retain, nonatomic) UIButton *playPauseButton;
-@property (retain, nonatomic) MPVolumeView *airplayButton;
+@property (strong, nonatomic) UIButton *playPauseButton;
+@property (strong, nonatomic) MPVolumeView *airplayButton;
 
-@property (retain, nonatomic) UISlider *progressBar;
+@property (strong, nonatomic) UISlider *progressBar;
 
-@property (retain, nonatomic) UILabel *playBackTime;
-@property (retain, nonatomic) UILabel *playBackTotalTime;
+@property (strong, nonatomic) UILabel *playBackTime;
+@property (strong, nonatomic) UILabel *playBackTotalTime;
 
-@property (retain,nonatomic) UIView *playerHudBottom;
+@property (strong, nonatomic) UIView *playerHudBottom;
 
 -(instancetype)initWithFrame:(CGRect)frame contentURL:(NSURL*)contentURL;
 -(instancetype)initWithFrame:(CGRect)frame playerItem:(AVPlayerItem*)playerItem;

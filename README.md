@@ -27,3 +27,8 @@ and specify whether the HUD should hide/show the UINavigationBar in full-screen/
 videoPlayer.shouldShowHideParentNavigationBar = YES;
 ```
 
+If you would like to overwrite the vibrate/mute toggle (play audio even though the phone is set to vibrate), just set the corresponding property:
+
+```objective-c
+videoPlayer.shouldPlayAudioOnVibrate = YES;
+```

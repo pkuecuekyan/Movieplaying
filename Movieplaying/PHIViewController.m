@@ -27,7 +27,7 @@
     [self preparePlayerWithURL:[NSURL URLWithString:@"http://content.uplynk.com/468ba4d137a44f7dab3ad028915d6276.m3u8"]];
 }
 
-#pragma mark - PHIVideoPlayerView prepare and setup
+#pragma mark - PHIVideoPlayerView preparation and setup
 
 - (void)preparePlayerWithURL:(NSURL*)url {
     UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -62,14 +62,18 @@
 
 - (void)setupPlayer:(NSURL*)url {
 
+    // Create video player
     PHIVideoPlayerView *aPlayer;
     aPlayer = [[PHIVideoPlayerView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) contentURL:url];
     aPlayer.shouldShowHideParentNavigationBar = YES;
     aPlayer.tintColor = [UIColor redColor];
     [self.view addSubview:aPlayer];
-   aPlayer.translatesAutoresizingMaskIntoConstraints = NO;
- 
-    // Add constraints    
+    aPlayer.translatesAutoresizingMaskIntoConstraints = NO;
+
+    // Overwrite 'sound off,' when vibrate switch is toggled on phone
+    aPlayer.shouldPlayAudioOnVibrate = YES;
+    
+    // Add constraints
     CGFloat maxDimension = MAX(self.view.frame.size.width, self.view.frame.size.height);
     [aPlayer constrainWithinSuperviewBounds];
     [aPlayer addConstraint:[aPlayer aspectConstraint:(16.0f / 9.0f)]];

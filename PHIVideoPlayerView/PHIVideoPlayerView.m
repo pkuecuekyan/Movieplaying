@@ -406,6 +406,28 @@
     self.moviePlayer = nil;
 }
 
+#pragma mark - Audio/vibrate override
+
+- (void)setShouldPlayAudioOnVibrate:(BOOL)shouldPlayAudioOnVibrate {
+    _shouldPlayAudioOnVibrate = shouldPlayAudioOnVibrate;
+
+    NSError *error = nil;
+    
+    if (shouldPlayAudioOnVibrate) {
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
+        [[AVAudioSession sharedInstance] setActive:YES error:&error];
+        
+    } else {
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
+        [[AVAudioSession sharedInstance] setActive:NO error:&error];
+        
+    }
+    
+    // error handling
+    if (error) {
+        DLog(@"%s: error while setting audio vibrate overwrite - %@", __func__, [error localizedDescription]);
+    }
+}
 
 #pragma mark - ActivityIndicator show/hide
 
