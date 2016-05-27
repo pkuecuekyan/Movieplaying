@@ -45,7 +45,7 @@
     [super layoutSubviews];
     
     if (self.shouldShowHideParentNavigationBar) {
-        if ([[self superviewNavigationController] isNavigationBarHidden] && (UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation))) {
+        if ([[self superviewNavigationController] isNavigationBarHidden] && (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]))) {
             [[self superviewNavigationController] setNavigationBarHidden:NO animated:YES];
         }
     }
@@ -322,7 +322,7 @@
     // show/hide parentViewController's navigationBar alongside HUD
     
     if (self.shouldShowHideParentNavigationBar) {
-        if (UIInterfaceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
+        if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
             [[self superviewNavigationController] setNavigationBarHidden:_isViewShowing animated:YES];
         }
     }
